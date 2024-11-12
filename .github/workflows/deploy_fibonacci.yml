@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - MOBL-39-test-deployment
-      
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,9 +21,23 @@ jobs:
         with:
           python-version: '3.12'
           
+      - name: Create Deployment
+        uses: chrnorm/deployment-action@v2.0.7
+        id: deployment
+        with:
+          environment: "production" # Update environment as needed
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Run Python Script
         run: |
           python fibonacci.py
+
+      - name: Update Deployment Status
+        uses: chrnorm/deployment-status@v2.0.3
+        with:
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          state: "success" # Set status based on script execution result
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Complete Deployment
         run: echo "Deployment complete! Python script executed successfully."
