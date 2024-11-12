@@ -1,0 +1,30 @@
+name: Deploy Python Script
+
+on:
+  push:
+    branches:
+      - MOBL-39-test-pull-request
+  pull_request:
+    branches:
+      - MOBL-39-test-pull-request
+      
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # Specify the Python version you want to use
+          
+      - name: Run Python Script
+        run: |
+          python fibonacci.py
+
+      - name: Complete Deployment
+        run: echo "Deployment complete! Python script executed successfully."
