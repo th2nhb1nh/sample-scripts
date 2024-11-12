@@ -3,28 +3,45 @@ name: Deploy Python Script
 on:
   push:
     branches:
-      - MOBL-39-test-pull-request
+      - MOBL-39-test-deployment
   pull_request:
     branches:
-      - MOBL-39-test-pull-request
-      
+      - MOBL-39-test-deployment
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      deployments: write
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5.3.0
         with:
-          python-version: '3.12'  # Specify the Python version you want to use
+          python-version: '3.12'
           
+      - name: Create Deployment
+        uses: chrnorm/deployment-action@v2.0.7
+        id: deployment
+        with:
+          environment: "production" # Update environment as needed
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Run Python Script
         run: |
           python fibonacci.py
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Complete Deployment
         run: echo "Deployment complete! Python script executed successfully."
