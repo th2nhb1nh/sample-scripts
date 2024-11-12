@@ -3,12 +3,11 @@ name: Deploy Python Script
 on:
   push:
     branches:
-      - MOBL-39-test-pull-request
+      - MOBL-39-test-deployment
   pull_request:
     branches:
-      - MOBL-39-test-pull-request
+      - MOBL-39-test-deployment
       
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
