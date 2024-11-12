@@ -35,12 +35,13 @@ jobs:
         run: |
           python fibonacci.py
 
-      - name: Update Deployment Status
-        uses: chrnorm/deployment-status@v2.0.3
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
         with:
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          state: "success" # Set status based on script execution result
           token: ${{ secrets.GITHUB_TOKEN }}
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Complete Deployment
         run: echo "Deployment complete! Python script executed successfully."
