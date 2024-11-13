@@ -1,4 +1,8 @@
 deployments:
+  environmentMapping:
+    Production:
+      - "production"
+
   deploymentGating:
     enabled: true # to enable the feature
     retry: 50 # run poll action 50 times
