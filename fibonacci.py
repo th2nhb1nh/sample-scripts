@@ -1,5 +1,4 @@
 def fib(limit=100):
-    """Generator to yield Fibonacci numbers up to a specified limit."""
     a, b = 0, 1
     while a <= limit:
         yield a, a ** 2  # Yield Fibonacci number and its square
