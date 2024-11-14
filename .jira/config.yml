@@ -11,4 +11,4 @@ deployments:
     - Production
   services:
     ids:
-    - ${{ secrets.JIRA_DEPLOYMENT_GATING_APPROVAL_SERVICE }}
+    - b:YXJpOmNsb3VkOmdyYXBoOjpzZXJ2aWNlLzYzOTcyMGFhLWI3NTYtNDFkOS1hNjg1LTlhNDkxYmFkZGRlNC81MzAyMzIxYS1hMjM5LTExZWYtYWY2MS0xMjAxZjE2ZWQ0MWY=
