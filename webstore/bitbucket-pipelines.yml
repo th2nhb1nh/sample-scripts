@@ -1,0 +1,26 @@
+# This is a sample build configuration for Other.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: python:3.7.3
+
+pipelines:
+  branches:
+    master:
+    - step:
+        name: Test
+        script:
+          - echo "Starting pipeline"
+    - step:
+        name: Deploy
+        deployment: production
+        script:
+         - echo "Deployed to production"
+         - cat index.html
+    - step:
+        name: Build
+        script:
+          - cat index.html
+          - echo "Ending pipeline"  
+
