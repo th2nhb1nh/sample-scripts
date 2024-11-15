@@ -1,5 +1,5 @@
 # fibonacci.py
-def fib(limit=100):
+def fib(limit=200):
     a, b = 0, 1
     while a <= limit:
         yield a, a ** 2  # Yield Fibonacci number and its square
