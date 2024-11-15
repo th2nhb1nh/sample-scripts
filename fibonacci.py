@@ -1,5 +1,5 @@
 # fibonacci.py
-def fib(limit=200):
+def fib(limit=300):
     a, b = 0, 1
     while a <= limit:
         yield a, a ** 2
