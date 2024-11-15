@@ -3,13 +3,16 @@ name: Deploy Python Script
 on:
   push:
     branches:
+      - release-production
       - MOBL-39-test-deployment
   pull_request:
     branches:
+      - release-production
       - MOBL-39-test-deployment
 
 jobs:
   deploy-staging:
+    if: github.ref != 'refs/heads/release-production'
     runs-on: ubuntu-latest
     environment: staging
     permissions:
@@ -43,7 +46,7 @@ jobs:
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
   deploy-production:
-    needs: deploy-staging
+    if: github.ref == 'refs/heads/release-production'
     runs-on: ubuntu-latest
     environment:
       name: production
