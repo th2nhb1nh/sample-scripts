@@ -12,7 +12,6 @@ on:
 
 jobs:
   deploy-staging:
-    if: github.ref != 'refs/heads/release-production'
     runs-on: ubuntu-latest
     environment: staging
     permissions:
@@ -46,6 +45,7 @@ jobs:
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
   deploy-production:
+    needs: deploy-staging
     if: github.ref == 'refs/heads/release-production'
     runs-on: ubuntu-latest
     environment:
