@@ -2,6 +2,7 @@ deployments:
   environmentMapping:
     Production:
       - "production"
+      - "production*"
 
   deploymentGating:
     enabled: true # to enable the feature
