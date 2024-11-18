@@ -3,6 +3,9 @@ deployments:
     Production:
       - "production"
       - "production*"
+      - "Production"
+      - "PRODUCTION"
+
 
   deploymentGating:
     enabled: true # to enable the feature
@@ -12,4 +15,4 @@ deployments:
     - Production
   services:
     ids:
-    - b:YXJpOmNsb3VkOmdyYXBoOjpzZXJ2aWNlLzYzOTcyMGFhLWI3NTYtNDFkOS1hNjg1LTlhNDkxYmFkZGRlNC81MzAyMzIxYS1hMjM5LTExZWYtYWY2MS0xMjAxZjE2ZWQ0MWY=
+    - b:YXJpOmNsb3VkOmdyYXBoOjpzZXJ2aWNlL2JlM2ExZTVjLTA4NTYtNGE1MS1iZDAyLWI0ZjMzOGRiOTkwMy83MzNlMzUwMC1hMTk1LTExZWYtYTRiMS0xMjAxZjE2ZWQ0MWY=
