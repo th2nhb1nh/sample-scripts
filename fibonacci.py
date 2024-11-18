@@ -5,10 +5,11 @@ def fib(limit=100):
         yield a, a ** 2
         a, b = b, a + b
 
-def main():
-    print("Fibonacci sequence (with squares) up to the limit:")
-    for f, f_square in fib():
-        print(f"{f} (Square: {f_square})")
+for f in fib():
+    if f > 100:
+        break
+    print(f)
 
-if __name__ == "__main__":
-    main()
+# Add line 1
+# Add line 2
+# Add line 3
