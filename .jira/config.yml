@@ -3,6 +3,8 @@ deployments:
     Production:
       - "production"
       - "production*"
+      - "Production"
+      - "PRODUCTION"
 
   deploymentGating:
     enabled: true # to enable the feature
