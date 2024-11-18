@@ -1,4 +1,4 @@
-# sample-scripts - Updated 4
+# sample-scripts - Updated 5
 use for testing purpose updated
 
 Jira would automatically links commit messages/branch names/deployments to specific issue if the message/name's format follows:
