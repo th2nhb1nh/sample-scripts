@@ -1,5 +1,5 @@
 # sample-scripts - 1 - 2 - 3
-use for testing purpose
+use for testing purpose updated
 
 Jira would automatically links commit messages/branch names/deployments to specific issue if the message/name's format follows:
 ```
