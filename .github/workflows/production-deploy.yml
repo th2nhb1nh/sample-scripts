@@ -4,8 +4,7 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - release-production
-
+      - master
 jobs:
   deploy-production:
     runs-on: ubuntu-latest
