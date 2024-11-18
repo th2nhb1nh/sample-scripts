@@ -1,4 +1,4 @@
-name: Deploy Python Script
+name: Deploy to Production
 
 on:
   push:
@@ -9,15 +9,13 @@ on:
       - release-production
 
 jobs:
-  deploy:
+  deploy-production:
     runs-on: ubuntu-latest
     environment:
       name: production
       url: ${{ github.server_url }}/${{ github.repository }}/deployments
-
     permissions:
       deployments: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
