@@ -1,5 +1,5 @@
-# sample-scripts
-use for testing purpose: Updated 1
+# sample-scripts - 1 - 2 - 3 - 4 - 5
+use for testing purpose
 
 Jira would automatically links commit messages/branch names/deployments to specific issue if the message/name's format follows:
 ```
@@ -10,4 +10,3 @@ or
 [JIRA-123]-<content>
 ```
 Add more line A
-

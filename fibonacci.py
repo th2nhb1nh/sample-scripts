@@ -6,7 +6,7 @@ def fib(limit=100):
         a, b = b, a + b
 
 for f in fib():
-    if f > 100:
+    if f == 100:
         break
     print(f)
 
