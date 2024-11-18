@@ -2,4 +2,14 @@ deployments:
   environmentMapping:
     production:
       - "Production"
-      - "Production"
+      - "production"
+
+  deploymentGating:
+    enabled: true # to enable the feature
+    retry: 50 # run poll action 50 times
+    sleep: 30 # wait 30 seconds between each poll
+    environments: # select the environments you'd like to use with this feature
+    - production
+  services:
+    ids:
+    - b:YXJpOmNsb3VkOmdyYXBoOjpzZXJ2aWNlL2JlM2ExZTVjLTA4NTYtNGE1MS1iZDAyLWI0ZjMzOGRiOTkwMy9lYjRlYTQ4YS03ZjBkLTExZWYtYTcyYy0xMjAxZjE2ZWQ0MWY=
