@@ -1,8 +1,8 @@
 deployments:
-  environmentMapping:
-    Production:
-      - "Production"
-      - "production"
+  # environmentMapping:
+  #   production:
+  #     - "Production"
+  #     - "production"
 
   deploymentGating:
     enabled: true # to enable the feature
